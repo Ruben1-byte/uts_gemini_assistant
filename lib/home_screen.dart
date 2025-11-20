@@ -66,10 +66,10 @@ class _HomeScreenState extends State<HomeScreen> {
         currentIndex: _selectedIndex, // Index tab yang aktif
         selectedItemColor: selectedColor, // Warna ikon yang aktif (Aksen: Cyan/Biru)
         
-        // >>> PERBAIKAN VISIBILITAS ICON <<<
+      
         unselectedItemColor: Colors.white70, // Paksa ikon yang tidak aktif menjadi putih buram
         
-        // Pastikan latar belakang BottomBar adalah gelap (seharusnya sudah diatur di main.dart)
+     
         backgroundColor: Theme.of(context).colorScheme.surface, 
         
         onTap: _onItemTapped, // Panggil fungsi saat tab ditekan
