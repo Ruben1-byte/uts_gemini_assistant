@@ -13,7 +13,6 @@ class AboutScreen extends StatelessWidget {
     
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Tentang Aplikasi'),
       ),
       body: Center(
         child: Padding(
@@ -40,7 +39,7 @@ class AboutScreen extends StatelessWidget {
               
              
               const Text(
-                'Aplikasi asisten cerdas ini dibuat untuk tugas UTS dan didukung penuh oleh Google Gemini API.',
+                'Copyright by Challik Ruben_23552011333',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 16),
               ),

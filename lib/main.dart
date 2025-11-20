@@ -28,22 +28,22 @@ class MyApp extends StatelessWidget {
       ),
       // Styling AppBar
       appBarTheme: const AppBarTheme(
-        backgroundColor: Colors.black, // AppBar Hitam
-        foregroundColor: Colors.white, // Teks dan Ikon Putih
+        backgroundColor: Colors.black, 
+        foregroundColor: Colors.white, 
         elevation: 0, // Tanpa bayangan untuk kesan modern
       ),
       // Styling Tombol (ElevatedButton)
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.cyan, // Tombol menggunakan warna aksen
-          foregroundColor: Colors.black, // Teks tombol hitam (kontras)
+          backgroundColor: Colors.cyan, 
+          foregroundColor: Colors.black, 
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         ),
       ),
       // Styling Input (TextField)
       inputDecorationTheme: const InputDecorationTheme(
         filled: true,
-        fillColor: Color(0xFF1A1A1A), // Warna input lebih gelap dari background
+        fillColor: Color(0xFF1A1A1A),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(10)),
           borderSide: BorderSide.none,
@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Gemini AI Assistant Elite',
-      theme: _darkTheme(), // Terapkan tema gelap
+      theme: _darkTheme(),
       home: const SplashScreen(),
     );
   }
