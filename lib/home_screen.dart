@@ -31,33 +31,32 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     // Tentukan warna aksen tema untuk BottomNavigationBar
-    final Color selectedColor = Theme.of(context).primaryColor; 
+    final Color selectedColor = Theme.of(context).primaryColor;
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Gemini Assistant'),
-        // Jika Anda menggunakan dark theme elite, elevation bisa dihilangkan
-        // elevation: 0, 
+        // Jika menggunakan dark theme, elevation seringkali dihilangkan
+        elevation: 0, 
       ),
       body: _screens[_selectedIndex], // Menampilkan screen yang terpilih
       
       bottomNavigationBar: BottomNavigationBar(
-        // Tambahkan tipe fixed agar label tetap terlihat (opsional, tergantung tema)
-        type: BottomNavigationBarType.fixed, 
+        type: BottomNavigationBarType.fixed,
         items: <BottomNavigationBarItem>[
-          // 🤖 Ikon Asisten Chat
+          // 🤖 Asisten Chat
           BottomNavigationBarItem(
             icon: const Icon(Icons.chat_bubble_outline), 
             activeIcon: const Icon(Icons.chat_bubble),
             label: 'Asisten Chat',
           ),
-          // ⚙️ Ikon Settings/History
+          // ⚙️ Riwayat & Settings
           BottomNavigationBarItem(
             icon: const Icon(Icons.history_toggle_off), 
             activeIcon: const Icon(Icons.history),
             label: 'Riwayat & Settings',
           ),
-          // ℹ️ Ikon About
+          // ℹ️ About
           BottomNavigationBarItem(
             icon: const Icon(Icons.info_outline),
             activeIcon: const Icon(Icons.info),
@@ -65,9 +64,14 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
         currentIndex: _selectedIndex, // Index tab yang aktif
-        selectedItemColor: selectedColor, // Menggunakan warna aksen tema
-        unselectedItemColor: Colors.grey, // Warna ikon yang tidak terpilih
-        backgroundColor: Theme.of(context).colorScheme.surface, // Warna background (penting untuk dark theme)
+        selectedItemColor: selectedColor, // Warna ikon yang aktif (Aksen: Cyan/Biru)
+        
+        // >>> PERBAIKAN VISIBILITAS ICON <<<
+        unselectedItemColor: Colors.white70, // Paksa ikon yang tidak aktif menjadi putih buram
+        
+        // Pastikan latar belakang BottomBar adalah gelap (seharusnya sudah diatur di main.dart)
+        backgroundColor: Theme.of(context).colorScheme.surface, 
+        
         onTap: _onItemTapped, // Panggil fungsi saat tab ditekan
       ),
     );
